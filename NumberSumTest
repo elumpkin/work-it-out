@@ -1,0 +1,60 @@
+public class NumberSumTest {
+
+	/**
+	 * The challenge is to find all the pairs of two integers in an 
+	 * unsorted array that sum up to a given S. For example, if the 
+	 * array is [3, 5, 2, -4, 8, 11] and the sum is 7, your program 
+	 * should return [[11, -4], [2, 5]] because 11 + -4 = 7 and 2 + 5 = 7.
+	 * @return 
+	 */
+	static HashMap numberMap; 
+	static int sum;
+	static Random random = new Random();
+	static Scanner scanner = new Scanner(System.in);
+	static String statement;
+	
+	public static void arraySetter(int x)
+	{
+		numberMap = new HashMap();
+		for(int i = 0; i < x; i++)
+		{
+			numberMap.put(i, (random.nextInt(90) + 10));
+			System.out.println(numberMap.get(i));
+		}
+	}
+	
+	public static void  sumChecker(int sum)
+	{		
+		for(int i = 0; i < numberMap.size(); i++)
+		{
+			int difference = sum - (Integer) numberMap.get(i);
+			
+			if (numberMap.containsValue(difference))
+			{
+				statement =  "[" + numberMap.get(i) + " ," + difference + "]";
+			}
+			else
+			{
+				statement = "No numbers in the set are equal to your sum";
+			}
+		}
+	}
+	
+	public static void main(String[] args)
+	{
+		
+		System.out.println("Please enter the number elements you want in your array");
+		
+		int x = Integer.parseInt(scanner.nextLine());
+		
+		arraySetter(x);
+	
+		System.out.println("Please enter the sum you are looking for");
+		
+		int sum = Integer.parseInt(scanner.nextLine());
+		sumChecker(sum);
+		
+		System.out.println(statement);
+	}
+	
+}
