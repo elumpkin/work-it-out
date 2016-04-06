@@ -1,0 +1,41 @@
+CREATE TABLE friends (id INTEGER, name STRING, birthday DATE);
+
+INSERT INTO friends (1, 'Jane Doe', 'May 19th, 1993');
+
+INSERT INTO friends (2, 'Sheryl Lo', 'October 3rd, 1990');
+
+INSERT INTO friends (3, 'Cody Cobb', 'June 17th, 1986');
+
+INSERT INTO friends (4, 'Daniel Tapia', 'October 9th, 1995');
+
+UPDATE friends
+SET name = 'Jane Smith'
+WHERE name = 'Jane Doe';
+
+ALTER TABLE friends ADD (email, STRING);
+
+UPDATE friends
+SET email = 'jdoe@example.com'
+WHERE name = 'Jane Smith';
+
+UPDATE friends
+SET email = 'slo@gmail.com'
+WHERE id = 2;
+
+UPDATE friends
+SET email = 'dtapia@gmail.com'
+WHERE id = 4;
+
+UPDATE friends
+SET email = 'cody.cobb@gmail.com'
+WHERE id = 3;
+
+DELETE FROM friends WHERE name = 'Jane Smith';
+
+SELECT name FROM friends;
+
+
+
+
+
+                    
