@@ -1,0 +1,27 @@
+public class Magic {
+	public static void main(String[] args) {
+
+    /*
+    
+    This program creates a magic trick where it performs a math function on an original number provided by the user and produces the orginal number in the consol after performing a series of math functions on it . 
+    
+    */
+    
+		int myNumber = 3;
+    
+    int stepOne = myNumber * myNumber;
+    
+    int stepTwo = stepOne + myNumber;
+    
+    int stepThree = stepTwo / myNumber;
+    
+    int stepFour = stepThree +17;
+    
+    int stepFive = stepFour - myNumber;
+    
+    int stepSix = stepFive / 6;
+    
+    System.out.println(stepSix);
+
+	}
+}
